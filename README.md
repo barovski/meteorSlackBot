@@ -1,0 +1,2 @@
+# meteorSlackBot
+Meteor Slack Bot
