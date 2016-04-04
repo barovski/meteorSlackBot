@@ -1,0 +1,24 @@
+<template name="listings">
+    <div class="listings sidebar-width">
+        <div class="listings_channels">
+            <h2 class="listings_header">Channels</h2>
+            <ul class="channel_list">
+                {{#each channels}}
+                    {{> channel name=name}}
+                {{/each}}
+            </ul>
+
+            {{#if currentUser}}
+                <div style="text-align: center; margin-top: 2em">
+                    <button type="button" class="btn btn-grc btn-xs addChannelButton" data-toggle="modal"
+                            data-target="#myModal">Add Channel
+                    </button>
+                </div>
+            {{/if}}
+        </div>
+        <div class="listings_direct-messages"></div>
+        <div>
+            <p class="disclaimer">Made with &hearts; for GRC Hackers</p>
+        </div>
+    </div>
+</template>

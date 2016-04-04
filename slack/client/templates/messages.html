@@ -1,0 +1,41 @@
+<template name="messages">
+  <div class="message-history" id="allMsg">
+      {{#if Template.subscriptionsReady}}
+          {{#each messages}}
+              {{> message text=text timestamp=timestamp user=user yelp=yelp data=data}}
+          {{/each}}
+      {{else}}
+          Loading…
+      {{/if}}
+  </div>
+</template>
+
+<template name="message">
+  <div class="message">
+    {{#if yelp}}
+      <a href="" class="message_profile-pic" style="background: url(https://c2.staticflickr.com/6/5180/5540543936_423e37dae4_b.jpg)"></a>
+      <a href="" class="message_username">{{user}}</a>
+      <span class="message_timestamp">{{timestampToTime timestamp}}</span>
+      <span class="message_star"></span>
+      {{#each data}}
+        <div class="yelp_content">
+          <img src="{{image_url}}" alt="">
+          <span class="message_content">
+            <a href="{{url}}" target="_blank">{{name}}</a> - <span class="gold-text">{{rating}} Stars</span> |  <a href="tel:{{display_phone}}">{{display_phone}}</a>
+          </span>
+        </div>
+      {{/each}}
+    {{else}}
+        {{#if isLoggedIn user}}
+      <a href="" class="loggedin_profile-pic"></a>
+      {{else}}
+            <a href="" class="anonymous_profile-pic"></a>
+        {{/if}}
+      <a href="" class="message_username">{{usernameFromId user}}</a>
+      <span class="message_timestamp">{{timestampToTime timestamp}}</span>
+      <span class="message_star"></span>
+      <span class="message_content">{{text}}</span>
+    {{/if}}
+  </div>
+</template>
+

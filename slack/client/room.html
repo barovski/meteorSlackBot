@@ -1,0 +1,20 @@
+
+<!--added iron router - Yegor Shemereko-->
+<template name="app">
+    {{> header}}
+    <div class="main">
+        {{> listings}}
+        {{> modal}}
+        {{> deleteModal}}
+        {{> errorModal}}
+        {{> yield}}
+    </div>
+    {{> footer}}
+</template>
+
+<template name="login">
+    {{#if currentUser}}
+        <button id="logout">Logout</button>
+    {{else}}
+    {{/if}}
+</template>

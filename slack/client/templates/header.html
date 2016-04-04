@@ -1,0 +1,18 @@
+<template name="header">
+    <div class="header">
+        <div class="team-menu sidebar-width">
+            {{> loginButtons}}
+        </div>
+
+        <div class="channel-menu">
+			<span class="channel-menu_name">
+				<span class="channel-menu_prefix">#</span>
+                {{currentChannel}}
+			</span>
+            {{#if currentUser}}
+                <button type="button" class="btn btn-remove btn-xs pull-right removeChannelButton" data-toggle="modal"
+                        data-target="#deleteModal">Delete</button>
+            {{/if}}
+        </div>
+    </div>
+</template>
