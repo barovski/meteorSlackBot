@@ -39,3 +39,30 @@ Meteor.publish("allUsernames", function () {
     });
 
 });
+
+/*
+ This finds all google registered users in the database
+ */
+Meteor.publish("allUsernames", function () {
+
+    return Meteor.useres.find({}, {
+        fields: {
+            "username": 1,
+            "services.google.username": 1
+        }
+    });
+})
+
+
+/*
+ This finds all facebook registered users in the database
+ */
+Meteor.publish("allUsernames", function () {
+
+    return Meteor.useres.find({}, {
+        fields: {
+            "username": 1,
+            "services.facebook.username": 1
+        }
+    });
+})
