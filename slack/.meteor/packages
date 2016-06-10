@@ -28,3 +28,5 @@ meteorhacks:npm
 npm-container
 
 utilities:avatar
+accounts-google
+accounts-facebook
