@@ -26,7 +26,7 @@ Meteor.publish('channels', function () {
 });
 
 /*
- This finds all github registered users in the database
+ This finds all registered users in the database
  */
 Meteor.publish("allUsernames", function () {
 
@@ -35,34 +35,6 @@ Meteor.publish("allUsernames", function () {
         fields: {
             "username": 1,
             "services.github.username": 1
-        }
-    });
-
-});
-
-/*
- This finds all google registered users in the database
- */
-Meteor.publish("allUsernames", function () {
-
-    return Meteor.useres.find({}, {
-        fields: {
-            "username": 1,
-            "services.google.username": 1
-        }
-    });
-})
-
-
-/*
- This finds all facebook registered users in the database
- */
-Meteor.publish("allUsernames", function () {
-
-    return Meteor.useres.find({}, {
-        fields: {
-            "username": 1,
-            "services.facebook.username": 1
         }
     });
 })
